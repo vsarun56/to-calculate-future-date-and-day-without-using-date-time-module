@@ -4,7 +4,7 @@ months = ['0','January', 'February', 'March', 'April', 'May', 'June', 'July', 'A
 endings =['0']+ ['st', 'nd', 'rd'] + 17 * ['th'] + ['st', 'nd', 'rd'] + 7 * ['th'] + ['st']
 monthdays=['0','31','28','31','30','31','30','31','30','31','30','31','30']
 dow=['0','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']
-#case: should not use funtions or oops conepts
+
 year = int(input('Year: '))
 month = input('Month (1-12): ')
 day = input('Day (1-31): ')
@@ -18,6 +18,7 @@ future_day=int(input('enter no future days: '))
 days_in_curntmonth=int(monthdays[month_number])-day_number
 
 if days_in_curntmonth >= future_day :
+    
     ordinal = str((day_number+future_day)) + endings[(day_number+future_day)]
     w=dow.index(week_day)
     ow=future_day%7;l=ow+w
@@ -26,11 +27,13 @@ if days_in_curntmonth >= future_day :
     print(month_name + ' ' + ordinal + ': ',dow[frd] ,str(year))
 
 else:
+    
     nm = future_day - days_in_curntmonth
     month_number+=1
     if month_number==13:month_number=1; year+=1
 
     while 1:
+        
         if nm>int(monthdays[month_number]):
             nm=nm-int(monthdays[month_number])
             month_number=month_number+1
